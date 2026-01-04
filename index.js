@@ -23,11 +23,22 @@ venom.create(
   },
 
   // OPTIONS
-  {
-    headless: false, // IMPORTANTE na 1ª vez
-    browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
-    disableWelcome: true
-  }
+{
+  headless: true,
+  browserArgs: [
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu'
+  ],
+  disableWelcome: true
+}
+
+  //{
+  //  headless: false, // IMPORTANTE na 1ª vez
+  //  browserArgs: ['--no-sandbox', '--disable-setuid-sandbox'],
+  //  disableWelcome: true
+  //}
 )
 .then((client) => {
   clientInstance = client;
